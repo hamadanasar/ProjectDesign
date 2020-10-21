@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        android:weightSum="5"
+        >
+
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:contentDescription="TODO"
+            android:src="@drawable/ic_delete_3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text1" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text1"
+            style="@style/inputText"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="3dp"
+            android:layout_weight="3"
+            android:textColorHint="@android:color/white"
+            app:hintTextColor="@android:color/holo_orange_light"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Search"
+                android:outlineAmbientShadowColor="@android:color/white"
+                android:outlineSpotShadowColor="@android:color/white"
+                android:shadowColor="@android:color/white"
+                android:textColor="@android:color/white"
+                android:textColorHighlight="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:textColorLink="@android:color/white"
+                android:textSize="16sp"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/minus"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="10"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"/>
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/plus"
+            />
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DDD</string>
+
+    <array name="menuOptions">
+        <item>Profile</item>
+        <item>Pharmacies</item>
+        <item>About Us</item>
+        <item>FAQ</item>
+    </array>
+</resources>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    app:contentScaleClosed="1.0"
+    app:contentScaleOpen="0.8"
+    app:clickToCloseScale="0.7"
+    app:menuScaleClosed="1.1"
+    app:menuScaleOpen="1.0"
+    app:marginFactor="0.6"
+    >
+
+    <nl.psdcompany.duonavigationdrawer.views.DuoMenuView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:tag="@string/tag_menu"
+        app:footer="@layout/duo_view_footer"
+        app:header="@layout/duo_view_header"
+        android:background="@android:color/white"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:tag="@string/tag_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#4ca4fa"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/bottonNav"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="25dp"
+
+                        >
+
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="15dp"
+                            >
+
+
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="10dp"
+                                android:background="@drawable/logopp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Always There To Care"
+                                android:textColor="@android:color/white"
+                                android:textSize="26sp"
+                                android:textStyle="bold"
+                                android:layout_gravity="start"
+                                android:gravity="start"
+                                android:layout_marginStart="10dp"
+                                />
+
+                        </LinearLayout>
+
+
+
+
+                        <include layout="@layout/edittextlayout"
+                            android:layout_marginTop="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="start"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Add More"
+                            android:textSize="20sp"
+                            android:textColor="@android:color/white"
+                            />
+
+
+
+                        <RadioGroup
+                            android:id="@+id/radioGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="15dp"
+                            app:layout_constraintTop_toBottomOf="@id/linear">
+
+                            <RadioButton
+                                android:id="@+id/radioButton_current"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:checked="true"
+                                android:padding="6dp"
+                                android:text="Current Location"
+                                android:textAllCaps="false"
+                                android:outlineSpotShadowColor="@android:color/holo_blue_dark"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp" />
+
+
+                            <RadioButton
+                                android:id="@+id/radioButton_other"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="10dp"
+                                android:padding="6dp"
+                                android:text="Other Location"
+                                android:textAllCaps="false"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp"
+                                style="@style/RadioButtonStyle"
+
+                                />
+
+                        </RadioGroup>
+
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/button_search"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:textAllCaps="false"
+                        app:cardBackgroundColor="@android:color/holo_orange_light"
+                        app:cardCornerRadius="5dp"
+                        android:layout_marginTop="25dp"
+
+                        >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Search"
+                            android:textSize="22sp"
+                            android:textColor="@android:color/white"
+                            />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+
+
+            </ScrollView>
+
+
+
+
+
+
+
+
+
+            <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+                android:id="@+id/bottonNav"
+                android:layout_width="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:layout_height="wrap_content"
+                app:mbn_backgroundBottomColor="#ffffff"
+                app:mbn_countBackgroundColor="#ff6f00"
+                app:mbn_countTextColor="#ffffff"
+                app:mbn_defaultIconColor="#2f424242"
+                app:mbn_rippleColor="#2f424242"
+                app:mbn_selectedIconColor="@color/colorPrimaryDark"
+                app:mbn_shadowColor="#1f212121 "
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout>
