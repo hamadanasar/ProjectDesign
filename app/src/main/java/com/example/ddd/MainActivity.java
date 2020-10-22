@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.ddd.Home_map.HomeFragment;
+import com.example.ddd.Home_map.MapFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomNavigation = findViewById(R.id.bottonNav);
-        button_search = findViewById(R.id.button_search);
+        button_search = findViewById(R.id.Search_btn);
 
         mTitles = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.menuOptions)));
 
@@ -61,34 +62,36 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
         bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_orders));
 
 
-        bottomNavigation.show(1, true);
 
         bottomNavigation.setOnShowListener(new Function1<MeowBottomNavigation.Model, Unit>() {
             @Override
             public Unit invoke(MeowBottomNavigation.Model model) {
                 switch (model.getId()) {
                     case 1:
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.fragment_container, new HomeFragment())
-                                .addToBackStack(null)
-                                .commit();
+                        goToFragment(new HomeFragment(),false);
                         break;
                     case 2:
+                    goToFragment(new MapFragment(), false);
                         break;
                 }
                 return null;
             }
         });
 
+
+
+        bottomNavigation.show(1, false);
+
+
+
+
+
         bottomNavigation.setOnClickMenuListener(new Function1<MeowBottomNavigation.Model, Unit>() {
             @Override
             public Unit invoke(MeowBottomNavigation.Model model) {
                 switch (model.getId()) {
                     case 1:
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.fragment_container, new HomeFragment())
-                                .addToBackStack(null)
-                                .commit();
+
                         break;
                     case 2:
                         break;
@@ -141,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
             transaction.addToBackStack(null);
         }
 
-        transaction.add(R.id.container, fragment).commit();
+        transaction.add(R.id.fragment_container, fragment).commit();
     }
 
     @Override
