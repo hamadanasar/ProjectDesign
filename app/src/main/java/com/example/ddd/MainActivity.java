@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.ddd.Home_map.HomeFragment;
 import com.example.ddd.Home_map.MapFragment;
+import com.example.ddd.Orders.OrdersFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -73,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
                     case 2:
                     goToFragment(new MapFragment(), false);
                         break;
+                    case 3 :
+                        goToFragment(new OrdersFragment(), false);
                 }
                 return null;
             }

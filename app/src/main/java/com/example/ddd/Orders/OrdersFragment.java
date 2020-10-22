@@ -11,11 +11,11 @@ import android.view.ViewGroup;
 import com.example.ddd.R;
 
 
-public class OrderFragment extends Fragment {
+public class OrdersFragment extends Fragment {
 
     View view ;
 
-    public OrderFragment() {
+    public OrdersFragment() {
         // Required empty public constructor
     }
 
