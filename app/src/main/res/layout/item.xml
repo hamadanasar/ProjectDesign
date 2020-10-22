@@ -31,6 +31,7 @@
             >
 
             <TextView
+                android:id="@+id/Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Augmantine 1 gm"
@@ -60,12 +61,14 @@
                     android:background="@drawable/rect">
 
                     <ImageView
+                        android:id="@+id/minus"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:background="@drawable/minus"
                         />
 
                     <TextView
+                        android:id="@+id/number"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:text="10"
@@ -76,6 +79,7 @@
 
 
                     <ImageView
+                        android:id="@+id/plus"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:background="@drawable/plus"
@@ -86,6 +90,7 @@
 
 
                 <TextView
+                    android:id="@+id/Cost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -103,7 +108,7 @@
 
 
         <ImageView
-            android:id="@+id/delete"
+            android:id="@+id/delete_btn"
             android:layout_width="31dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_delete_3"
