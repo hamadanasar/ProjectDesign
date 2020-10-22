@@ -86,25 +86,6 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
         bottomNavigation.show(1, false);
 
 
-
-
-
-        bottomNavigation.setOnClickMenuListener(new Function1<MeowBottomNavigation.Model, Unit>() {
-            @Override
-            public Unit invoke(MeowBottomNavigation.Model model) {
-                switch (model.getId()) {
-                    case 1:
-
-                        break;
-                    case 2:
-                        break;
-                }
-                return null;
-            }
-
-        });
-
-
     }
 
     private void handleToolbar() {

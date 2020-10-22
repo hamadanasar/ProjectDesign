@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DDD</string>
+    <string name="app_name">UserDesign</string>
 
     <array name="menuOptions">
         <item>Profile</item>
