@@ -28,6 +28,13 @@
         <item name="colorButtonNormal">@color/colorAccent</item>
     </style>
 
+
+    <style name="button" parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="android:buttonTint">#FFFFFF</item>
+        <item name="backgroundColor">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+    </style>
+
     <style name="dialogtheme" parent="Theme.Design.Light.BottomSheetDialog"
 
         />

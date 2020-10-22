@@ -1,6 +1,8 @@
 package com.example.ddd;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,19 +25,21 @@ import nl.psdcompany.duonavigationdrawer.widgets.DuoDrawerToggle;
 public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMenuClickListener {
 
     MeowBottomNavigation bottomNavigation;
-    CardView button_search;
+    Button button_search;
 
     private MenuAdapter mMenuAdapter;
     private ViewHolder mViewHolder;
     private ArrayList<String> mTitles = new ArrayList<>();
 
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomNavigation = findViewById(R.id.bottonNav);
         button_search = findViewById(R.id.button_search);
+        button_search.setBackgroundColor(R.color.colorPrimary);
 
         mTitles = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.menuOptions)));
 
