@@ -1,8 +1,6 @@
 package com.example.ddd;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,21 +23,19 @@ import nl.psdcompany.duonavigationdrawer.widgets.DuoDrawerToggle;
 public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMenuClickListener {
 
     MeowBottomNavigation bottomNavigation;
-    Button button_search;
+    CardView button_search;
 
     private MenuAdapter mMenuAdapter;
     private ViewHolder mViewHolder;
     private ArrayList<String> mTitles = new ArrayList<>();
 
 
-    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomNavigation = findViewById(R.id.bottonNav);
         button_search = findViewById(R.id.button_search);
-        button_search.setBackgroundColor(R.color.colorPrimary);
 
         mTitles = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.menuOptions)));
 
@@ -59,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
         setTitle("Home");
 
 
-
         bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_home));
         bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_map));
         bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_orders));
@@ -67,12 +62,32 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
 
         bottomNavigation.show(1, true);
 
+        bottomNavigation.setOnShowListener(new Function1<MeowBottomNavigation.Model, Unit>() {
+            @Override
+            public Unit invoke(MeowBottomNavigation.Model model) {
+                switch (model.getId()) {
+                    case 1:
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, new HomeFragment())
+                                .addToBackStack(null)
+                                .commit();
+                        break;
+                    case 2:
+                        break;
+                }
+                return null;
+            }
+        });
+
         bottomNavigation.setOnClickMenuListener(new Function1<MeowBottomNavigation.Model, Unit>() {
             @Override
             public Unit invoke(MeowBottomNavigation.Model model) {
                 switch (model.getId()) {
                     case 1:
-                        Toast.makeText(MainActivity.this, "home", Toast.LENGTH_SHORT).show();
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.fragment_container, new HomeFragment())
+                                .addToBackStack(null)
+                                .commit();
                         break;
                     case 2:
                         break;
