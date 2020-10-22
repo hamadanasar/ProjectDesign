@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
         setContentView(R.layout.activity_main);
         bottomNavigation = findViewById(R.id.bottonNav);
         button_search = findViewById(R.id.Search_btn);
-
         mTitles = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.menuOptions)));
 
         // Initialize the views
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
         // Handle drawer actions
         handleDrawer();
 
-        mMenuAdapter.setViewSelected(0, true);
+        mMenuAdapter.setViewSelected(0,true);
         setTitle("Home");
 
 
@@ -63,24 +62,22 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
         bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_orders));
 
 
-
         bottomNavigation.setOnShowListener(new Function1<MeowBottomNavigation.Model, Unit>() {
             @Override
             public Unit invoke(MeowBottomNavigation.Model model) {
                 switch (model.getId()) {
                     case 1:
-                        goToFragment(new HomeFragment(),false);
+                        goToFragment(new HomeFragment());
                         break;
                     case 2:
-                    goToFragment(new MapFragment(), false);
+                        goToFragment(new MapFragment());
                         break;
-                    case 3 :
-                        goToFragment(new OrdersFragment(), false);
+                    case 3:
+                        goToFragment(new OrdersFragment());
                 }
                 return null;
             }
         });
-
 
 
         bottomNavigation.show(1, false);
@@ -106,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
 
     private void handleMenu() {
         mMenuAdapter = new MenuAdapter(mTitles);
-
         mViewHolder.mDuoMenuView.setOnMenuClickListener(this);
         mViewHolder.mDuoMenuView.setAdapter(mMenuAdapter);
     }
@@ -121,14 +117,11 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
         Toast.makeText(this, "onHeaderClicked", Toast.LENGTH_SHORT).show();
     }
 
-    private void goToFragment(Fragment fragment, boolean addToBackStack) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+    private void goToFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction().addToBackStack(null);
 
-        if (addToBackStack) {
-            transaction.addToBackStack(null);
-        }
 
-        transaction.add(R.id.fragment_container, fragment).commit();
+        transaction.replace(R.id.fragment_container, fragment).commit();
     }
 
     @Override
@@ -137,14 +130,22 @@ public class MainActivity extends AppCompatActivity implements DuoMenuView.OnMen
         setTitle(mTitles.get(position));
 
         // Set the right options selected
-        mMenuAdapter.setViewSelected(position, true);
+        mMenuAdapter.setViewSelected(position,true);
 
         // Navigate to the right fragment
         switch (position) {
-            default:
+            case 0:
+                goToFragment(new HomeFragment());
                 break;
-        }
+            case 1:
+                goToFragment(new MapFragment());
+                break;
+            case 2:
+                goToFragment(new OrdersFragment());
+            case 3:
+                goToFragment(new OrdersFragment());
 
+        }
         // Close the drawer
         mViewHolder.mDuoDrawerLayout.closeDrawer();
     }
