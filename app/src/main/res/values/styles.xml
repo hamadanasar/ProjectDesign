@@ -38,8 +38,6 @@
     <style name="dialogtheme" parent="Theme.Design.Light.BottomSheetDialog"
 
         />
-    <style name="bottomstyle" parent="Widget.Design.BottomSheet.Modal">
-        <item name="background">@drawable/bottom_sheet_rectangle</item>
-    </style>
+
 
 </resources>

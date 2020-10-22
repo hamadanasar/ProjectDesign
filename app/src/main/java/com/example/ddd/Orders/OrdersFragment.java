@@ -26,7 +26,7 @@ public class OrdersFragment extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fr_order, container, false);
 
-
+////
         return view;
     }
 }
