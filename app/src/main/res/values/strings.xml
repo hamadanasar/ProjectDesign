@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">UserDesign</string>
+
+    <array name="menuOptions">
+        <item>Profile</item>
+        <item>Pharmacies</item>
+        <item>About Us</item>
+        <item>FAQ</item>
+    </array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
